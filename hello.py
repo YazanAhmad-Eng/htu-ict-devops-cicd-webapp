@@ -7,6 +7,7 @@ file through Gunicorn; the result is "Attempted relative import in non-package".
 The solution is to provide a simple alternate startup file, like this present
 hello.py, that just imports the app object. You can then just specify
 hello:app in the Gunicorn command.
+this is some extra line 
 """
 
 from hello_app.webapp import app
