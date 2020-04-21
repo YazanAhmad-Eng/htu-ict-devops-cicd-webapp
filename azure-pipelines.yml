@@ -29,5 +29,5 @@ steps:
     bash setupenv.sh
   displayName: 'sitting up env '
 - script: 
-    gunicorn --bind=0.0.0.0 --workers=4 hello:app
+    gunicorn --bind=0.0.0.0:4000 --workers=4 hello:app
   displayName: 'sitting gunicorn '
