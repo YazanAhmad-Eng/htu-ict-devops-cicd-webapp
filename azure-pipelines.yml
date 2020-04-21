@@ -1,0 +1,33 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+- task: CopyFilesOverSSH@0
+  inputs:
+    sshEndpoint: 'yazan0devops@13.68.215.202'
+    sourceFolder: ''
+    contents: '**'
+    targetFolder: '/home/yazan0devops/htu-webapp/$(Build.buildid)'
+    cleanTargetFolder: true
+    readyTimeout: '20000'
+    failOnEmptySource: true
+- script: |
+    bash setup.sh
+    bash setupenv.sh
+  displayName: 'sitting up vm '
+- script: 
+    bash setupenv.sh
+  displayName: 'sitting up env '
+- script: 
+    gunicorn --bind=0.0.0.0:4000 --workers=4 hello:app
+  displayName: 'sitting gunicorn '
