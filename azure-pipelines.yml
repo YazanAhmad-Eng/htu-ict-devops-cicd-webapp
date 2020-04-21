@@ -23,5 +23,11 @@ steps:
     failOnEmptySource: true
 - script: |
     bash setup.sh
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    bash setupenv.sh
+  displayName: 'sitting up vm '
+- script: 
+    bash setupenv.sh
+  displayName: 'sitting up env '
+- script: 
+    gunicorn --bind=0.0.0.0 --workers=4 hello:app
+  displayName: 'sitting gunicorn '
