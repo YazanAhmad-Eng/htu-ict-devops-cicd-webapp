@@ -1,3 +1,4 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "/home/yazan/workspece/webapp/htu-ict-devops-cicd-webapp/PYenv/bin/python3"
 }
