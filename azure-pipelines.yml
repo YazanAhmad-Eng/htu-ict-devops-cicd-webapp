@@ -17,7 +17,7 @@ steps:
     sshEndpoint: 'yazan0devops@13.68.215.202'
     sourceFolder: ''
     contents: '**'
-    targetFolder: '/home/yazan0devops/htu-webapp'
+    targetFolder: ''
     cleanTargetFolder: true
     readyTimeout: '20000'
     failOnEmptySource: true
