@@ -28,6 +28,3 @@ steps:
 - script: 
     bash setupenv.sh
   displayName: 'sitting up env '
-- script: 
-      bash start_server.sh
-  displayName: 'sitting gunicorn '
